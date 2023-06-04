@@ -7,8 +7,8 @@
                 </v-col>
                 <v-col class="navs" cols="7" xl="5" lg="8">
                     <router-link to="/chat">AI Chat</router-link>
-                    <router-link to="/face">Image Processing</router-link>
-                    <router-link to="/voice">Voice Assistant</router-link>
+                    <router-link to="/face">Face Recognition</router-link>
+                    <router-link to="/sign">Sign Language</router-link>
                     <router-link to="/health">Health Management</router-link>
                 </v-col>
                 <v-col
@@ -30,11 +30,11 @@
                         <router-link to="/chat" @click="toggle"
                             >AI Chat</router-link
                         >
-                        <router-link to="/face" @click="toggle"
-                            >Image Processing</router-link
+                        <router-link to="/sign" @click="toggle"
+                            >Sign Language</router-link
                         >
-                        <router-link to="/voice" @click="toggle"
-                            >Voice Assistant</router-link
+                        <router-link to="/face" @click="toggle"
+                            >Facial Expressions</router-link
                         >
                         <router-link to="/health" @click="toggle"
                             >Health Management</router-link
@@ -70,6 +70,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 10000000;
 }
 
 .header {

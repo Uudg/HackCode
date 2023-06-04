@@ -17,13 +17,14 @@
                 </div>
             </v-col>
             <v-col cols="12" md="6" class="img">
-                <img :src="require('@/assets/img/1.png')" alt="" />
+                <img :src="require('@/assets/img/1.png')" alt="iphone" />
             </v-col>
         </v-row>
         <div class="space"></div>
         <home-block :data="via" />
-        <home-block :data="fr" />
         <home-block :data="sn" />
+        <home-block :data="fr" />
+        <home-block :data="hm" />
     </v-container>
 </template>
 
@@ -71,8 +72,7 @@ export default {
                         icon: "lock",
                     },
                 ],
-                img: "2.png",
-                opossite: true,
+                img: "3.png",
                 link: "/face",
             },
             sn: {
@@ -88,7 +88,8 @@ export default {
                         icon: "chat",
                     },
                 ],
-                img: "2.png",
+                img: "4.png",
+                opossite: true,
                 link: "/sign",
             },
             voa: {
@@ -104,15 +105,21 @@ export default {
                 link: "/voice",
             },
             hm: {
-                title: "Health Management",
-                body: "",
+                title: "Scheduling",
+                main: "Health Management",
+                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
                 features: [
                     {
-                        name: "",
-                        icon: "",
+                        name: "Some Text",
+                        icon: "health",
+                    },
+                    {
+                        name: "Time Management",
+                        icon: "time",
                     },
                 ],
-                img: "",
+                img: "5.png",
+                opossite: true,
                 link: "/health",
             },
         };
@@ -157,9 +164,15 @@ h1 {
     height: 100%;
 }
 
+.img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .img > img {
-    min-height: 100%;
-    object-fit: contain;
+    object-fit: scale-down;
+    max-height: 100%;
 }
 
 .body > div {
@@ -184,6 +197,7 @@ span {
     align-items: center;
     opacity: 0.6;
     margin-top: 30px;
+    z-index: 0;
 }
 
 .first .body > div img {
@@ -209,6 +223,14 @@ h3 {
 
     .first .img {
         display: none;
+    }
+
+    .space {
+        height: 0;
+    }
+
+    h3 {
+        padding: 0 !important;
     }
 }
 </style>

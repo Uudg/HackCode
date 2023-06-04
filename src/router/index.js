@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ImageView from '../views/ImageView.vue'
+import FaceView from '../views/FaceView.vue'
 import ChatView from '../views/ChatView.vue'
 import HealthView from '../views/HealthView.vue'
 import SignView from '../views/SignView.vue'
@@ -17,9 +17,9 @@ const routes = [
     component: ChatView
   },
   {
-    path: '/image',
-    name: 'image',
-    component: ImageView
+    path: '/face',
+    name: 'face',
+    component: FaceView
   },
   {
     path: '/',
@@ -30,13 +30,21 @@ const routes = [
     path: '/sign',
     name: 'sign',
     component: SignView
+  },
+  {
+    path: '/health',
+    name: 'health',
+    component: HealthView
   }
 
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 })
 
 export default router

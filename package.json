@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "annyang": "^2.6.1",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",

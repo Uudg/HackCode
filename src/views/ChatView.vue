@@ -69,6 +69,24 @@
                                     placeholder="Hello! I am EmpowerAI, your personal assistant"
                                     v-model="input"
                                 />
+                                <div
+                                    @click="
+                                        ($event) =>
+                                            toggleSpeechRecognition($event)
+                                    "
+                                    class="voice"
+                                >
+                                    <img
+                                        :src="require('@/assets/img/mic.svg')"
+                                        alt=""
+                                        v-if="!listening"
+                                    />
+                                    <img
+                                        :src="require('@/assets/img/stop.svg')"
+                                        alt=""
+                                        v-else
+                                    />
+                                </div>
                                 <button @click="($event) => msg($event)">
                                     <img
                                         :src="require('@/assets/img/plane.svg')"
@@ -86,17 +104,22 @@
 
 <script>
 import axios from "axios";
+import annyang from "annyang";
 
 export default {
     data() {
         return {
             input: "",
             messages: [],
+
+            listening: false,
+            recognizedText: "",
         };
     },
     methods: {
         msg(e) {
             e.preventDefault();
+            this.stopSpeechRecognition();
             // const message = this.input;
             this.messages.push({
                 role: "user",
@@ -117,11 +140,47 @@ export default {
                     console.log(error);
                 });
         },
+        toggleSpeechRecognition(e) {
+            e.preventDefault();
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+            }
+            if (!this.listening) {
+                this.startSpeechRecognition();
+            } else {
+                this.stopSpeechRecognition();
+            }
+        },
+        startSpeechRecognition() {
+            if (annyang) {
+                annyang.addCallback("result", (phrases) => {
+                    this.recognizedText = phrases[0];
+                    this.input = this.recognizedText;
+                });
+
+                annyang.start();
+                this.listening = true;
+            }
+        },
+        stopSpeechRecognition() {
+            if (annyang) {
+                annyang.abort();
+                // this.recognizedText = "";
+                this.listening = false;
+            }
+        },
+    },
+    beforeUnmount() {
+        this.stopSpeechRecognition();
     },
 };
 </script>
 
 <style scoped>
+label .voice {
+    background: #fff;
+}
 .message span {
     width: 40px;
     display: inline-block;
@@ -174,7 +233,8 @@ label {
     border-radius: 10px;
 }
 
-label button {
+label button,
+label div {
     padding: 10px;
     width: 10%;
     outline: none;
@@ -184,12 +244,12 @@ label button {
     align-items: center;
 }
 
-label button img {
+label img {
     height: 100%;
 }
 
 input {
-    width: 90%;
+    width: 80%;
     padding: 10px;
     background: #fff;
     outline: none;
@@ -254,5 +314,15 @@ h2 {
 img {
     object-fit: contain;
     max-width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    label button,
+    label div {
+        width: 20%;
+    }
+    label input {
+        width: 80%;
+    }
 }
 </style>
