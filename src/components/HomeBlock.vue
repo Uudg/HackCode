@@ -118,6 +118,7 @@ h5 {
 .img img {
     object-fit: contain;
     max-height: 100%;
+    max-width: 100%;
 }
 
 h3 {
