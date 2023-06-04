@@ -1,30 +1,49 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+    <v-app>
+        <HeaderComp />
+        <v-content class="view" fluid>
+            <router-view></router-view>
+        </v-content>
+    </v-app>
 </template>
 
+<script>
+import HeaderComp from "./components/HeaderComp.vue";
+
+export default {
+    name: "App",
+    components: {
+        HeaderComp,
+    },
+    data: () => ({
+        //
+    }),
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --main: #ec6565;
+    --font: 16px;
+    --header: 120px;
 }
 
-nav {
-  padding: 30px;
+* {
+    font-family: "Outfit", sans-serif;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+html,
+body {
+    background: #f3f3f3;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+.view {
+    background: #f3f3f3;
+
+    width: 100%;
+    margin-top: var(--header);
+    min-height: 100vh;
 }
 </style>
