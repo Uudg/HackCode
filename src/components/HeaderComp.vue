@@ -27,20 +27,20 @@
                 >
                     <div class="bg" @click="toggle"></div>
                     <div class="nav">
-                        <router-link to="/" @click="toggle">Home</router-link>
-                        <router-link to="/chat" @click="toggle"
+                        <router-link to="/" @click="toggle('/')">Home</router-link>
+                        <router-link to="/chat" @click="toggle('/chat')"
                             >AI Chat</router-link
                         >
-                        <router-link to="/face" @click="toggle"
+                        <router-link to="/face" @click="toggle('/face')"
                             >Image Processing</router-link
                         >
-                        <router-link to="/voice" @click="toggle"
+                        <router-link to="/voice" @click="toggle('/voice')"
                             >Voice Assistant</router-link
                         >
-                        <router-link to="/health" @click="toggle"
+                        <router-link to="/health" @click="toggle('/voice')"
                             >Health Management</router-link
                         >
-                        <router-link to="/settings" @click="toggle"
+                        <router-link to="/settings" @click="toggle('/settings')"
                             >Settings</router-link
                         >
                     </div>
@@ -59,8 +59,9 @@ export default {
         };
     },
     methods: {
-        toggle() {
+        toggle(linkTo) {
             this.active = !this.active;
+            this.$router.push(linkTo);
         },
     },
 };

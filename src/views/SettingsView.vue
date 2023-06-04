@@ -4,7 +4,7 @@
             <h5>Settings</h5>
         </v-row>
         <v-row class="jcsb item mt-1">
-            Change font-size <button @click="changeFontSize">Change</button>
+            Change font-size <input type="range" @change="handleFontChange">
         </v-row>
         <v-row class="jcsb item mt-1">
             Enable high contrast theme <button @click="highContrastTheme">Enable</button>
@@ -25,8 +25,9 @@ export default {
         };
     },
     methods: {
-        changeFontSize() {
-            this.root.style.setProperty('--font', '20px')
+        handleFontChange(event) {
+            // this.root.style.setProperty('--font', '20px')
+            console.log(event.target.value)
         },
         highContrastTheme() {
             // this.root.style.setProperty('--bg', '#111')
