@@ -49,7 +49,35 @@
         <v-row class="Example">
             <v-col cols="12">
                 <div class="chat">
-                    <h5>Model used: "ext-davinci-003"</h5>
+                    <h5>Model used: "gpt-3.5-turbo"</h5>
+                    <div class="chatbox">
+                        <div class="list">
+                            <div
+                                class="message"
+                                :class="el.role"
+                                v-for="el in messages"
+                                :key="el"
+                            >
+                                <span v-if="el.role === 'user'">You: </span>
+                                <span v-else>AI: </span> {{ el.content }}
+                            </div>
+                        </div>
+                        <form>
+                            <label
+                                ><input
+                                    type="text"
+                                    placeholder="Hello! I am EmpowerAI, your personal assistant"
+                                    v-model="input"
+                                />
+                                <button @click="($event) => msg($event)">
+                                    <img
+                                        :src="require('@/assets/img/plane.svg')"
+                                        alt=""
+                                    />
+                                </button>
+                            </label>
+                        </form>
+                    </div>
                 </div>
             </v-col>
         </v-row>
@@ -57,10 +85,75 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+    data() {
+        return {
+            input: "",
+            messages: [],
+        };
+    },
+    methods: {
+        msg(e) {
+            e.preventDefault();
+            // const message = this.input;
+            this.messages.push({
+                role: "user",
+                content: this.input,
+            });
+            this.input = "Loading...";
+
+            axios
+                .post("http://localhost:3000", this.messages)
+                .then((res) => {
+                    this.messages.push({
+                        role: "assistant",
+                        content: res.data.message.content,
+                    });
+                    this.input = "";
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+    },
+};
 </script>
 
 <style scoped>
+.message span {
+    width: 40px;
+    display: inline-block;
+}
+
+.message.assistant span {
+    color: #00a67e;
+}
+
+.message {
+    padding: 20px 10px;
+    border-top: 1px solid #f3f3f3;
+    max-width: 100%;
+}
+.chatbox {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.list {
+    margin-bottom: 20px;
+
+    overflow: auto;
+    position: relative;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 .chat {
     box-shadow: 0px 0px 20px #e5e2e2;
     background: #fff;
@@ -71,8 +164,37 @@ export default {};
     justify-content: center;
 }
 
-input {
+label {
+    border: 2px solid #f3f3f3;
+    overflow: hidden;
     background: #fff;
+    width: 100%;
+    height: calc(var(--font) * 3);
+    display: flex;
+    border-radius: 10px;
+}
+
+label button {
+    padding: 10px;
+    width: 10%;
+    outline: none;
+    background: var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label button img {
+    height: 100%;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    background: #fff;
+    outline: none;
+    height: 100%;
+    text-align: left;
 }
 
 h2 {

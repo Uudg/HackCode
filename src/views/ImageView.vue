@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h2>Face Recognition</h2>
+        <h2>Facial Expressions Recognition</h2>
         <v-row class="features">
             <v-col cols="12" md="4">
                 <div class="feature">
@@ -47,16 +47,31 @@
         </v-row>
         <h3>Try Yourself</h3>
         <v-row class="Example">
-            <!-- <FaceRecogniton /> -->
+            <v-col cols="12" md="7" class="test">
+                <div>
+                    <button class="load" @click="loadFrame" v-if="!active">
+                        Load
+                    </button>
+                    <iframe :src="url" scrolling="no"></iframe>
+                </div>
+            </v-col>
         </v-row>
     </v-container>
 </template>
 
 <script>
-// import FaceRecogniton from "@/components/FaceRecogniton.vue";
 export default {
-    components: {
-        // FaceRecogniton,
+    data() {
+        return {
+            active: false,
+            url: "",
+        };
+    },
+    methods: {
+        loadFrame() {
+            this.url = "http://localhost:2000/video_feed";
+            this.active = true;
+        },
     },
 };
 </script>
@@ -83,6 +98,11 @@ h2 {
     display: flex;
     justify-content: center;
     padding-bottom: 14px;
+}
+
+.Example {
+    display: flex;
+    justify-content: center;
 }
 
 .test > div {

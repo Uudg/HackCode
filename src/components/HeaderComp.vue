@@ -70,12 +70,7 @@ export default {
 <style scoped>
 header {
     height: var(--header);
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(243, 243, 243, 1) 100%
-    );
+    background: #f3f3f3;
     position: fixed;
     top: 0;
     left: 0;
