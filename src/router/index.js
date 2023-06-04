@@ -4,6 +4,7 @@ import ImageView from '../views/ImageView.vue'
 import ChatView from '../views/ChatView.vue'
 import HealthView from '../views/HealthView.vue'
 import SignView from '../views/SignView.vue'
+import SettingsView from '../views/SettingsView.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/sign',
     name: 'sign',
     component: SignView
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: SettingsView
   }
 
 ]

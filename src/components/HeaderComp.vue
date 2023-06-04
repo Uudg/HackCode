@@ -5,11 +5,12 @@
                 <v-col class="logo" cols="10" md="3">
                     <router-link to="/"> Empower<span>AI</span> </router-link>
                 </v-col>
-                <v-col class="navs" cols="7" xl="5" lg="8">
+                <v-col class="navs" cols="7" xl="6" lg="8">
                     <router-link to="/chat">AI Chat</router-link>
                     <router-link to="/face">Image Processing</router-link>
                     <router-link to="/voice">Voice Assistant</router-link>
                     <router-link to="/health">Health Management</router-link>
+                    <router-link to="/settings"><img :src="require('@/assets/img/settings.svg')" /></router-link>
                 </v-col>
                 <v-col
                     cols="2"
@@ -38,6 +39,9 @@
                         >
                         <router-link to="/health" @click="toggle"
                             >Health Management</router-link
+                        >
+                        <router-link to="/settings" @click="toggle"
+                            >Settings</router-link
                         >
                     </div>
                 </v-col>

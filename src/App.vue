@@ -26,6 +26,7 @@ export default {
 
 :root {
     --main: #ec6565;
+    --bg: '#f3f3f3';
     --font: 16px;
     --header: 120px;
 }
@@ -36,12 +37,12 @@ export default {
 
 html,
 body {
-    background: #f3f3f3;
+    forced-color-adjust: none;
+    background: var(--bg);
 }
 
 .view {
-    background: #f3f3f3;
-
+    background: var(--bg);
     width: 100%;
     margin-top: var(--header);
     min-height: 100vh;
