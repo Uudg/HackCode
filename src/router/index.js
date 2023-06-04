@@ -4,6 +4,8 @@ import FaceView from '../views/FaceView.vue'
 import ChatView from '../views/ChatView.vue'
 import HealthView from '../views/HealthView.vue'
 import SignView from '../views/SignView.vue'
+import SettingsView from '../views/SettingsView.vue'
+import SpeechView from '../views/SpeechView.vue'
 
 const routes = [
   {
@@ -35,8 +37,16 @@ const routes = [
     path: '/health',
     name: 'health',
     component: HealthView
+  },{
+    path: '/settings',
+    name: 'settings',
+    component: SettingsView
+  },
+  {
+    path: '/tts',
+    name: 'tts',
+    component: SpeechView
   }
-
 ]
 
 const router = createRouter({
