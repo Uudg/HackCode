@@ -4,7 +4,7 @@
             <h5>Settings</h5>
         </v-row>
         <v-row class="jcsb item mt-1">
-            Change font-size <input type="range" @change="handleFontChange">
+            Change font-size <input type="range" step="1" max="" @change="handleFontChange">
         </v-row>
         <v-row class="jcsb item mt-1">
             Enable high contrast theme <button @click="highContrastTheme">Enable</button>
