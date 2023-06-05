@@ -10,9 +10,6 @@
                     <router-link to="/face">Face Recognition</router-link>
                     <router-link to="/sign">Sign Language</router-link>
                     <router-link to="/health">Health Management</router-link>
-                    <router-link to="/settings"
-                        ><img :src="require('@/assets/img/settings.svg')"
-                    /></router-link>
                 </v-col>
                 <v-col
                     cols="2"
@@ -33,17 +30,14 @@
                         <router-link to="/chat" @click="toggle"
                             >AI Chat</router-link
                         >
-                        <router-link to="/face" @click="toggle"
-                            >Image Processing</router-link
+                        <router-link to="/sign" @click="toggle"
+                            >Sign Language</router-link
                         >
-                        <router-link to="/voice" @click="toggle"
-                            >Voice Assistant</router-link
+                        <router-link to="/face" @click="toggle"
+                            >Facial Expressions</router-link
                         >
                         <router-link to="/health" @click="toggle"
                             >Health Management</router-link
-                        >
-                        <router-link to="/settings" @click="toggle('/settings')"
-                            >Settings</router-link
                         >
                     </div>
                 </v-col>
@@ -61,9 +55,8 @@ export default {
         };
     },
     methods: {
-        toggle(linkTo) {
+        toggle() {
             this.active = !this.active;
-            this.$router.push(linkTo);
         },
     },
 };
@@ -107,7 +100,7 @@ a {
 }
 
 .navs a {
-    font-size: calc(var(--font) * 1.5);
+    font-size: calc(var(--font) * 1.2s);
     font-weight: 200;
     text-decoration: none;
     color: #000;

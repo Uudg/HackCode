@@ -26,7 +26,6 @@ export default {
 
 :root {
     --main: #ec6565;
-    --bg: '#f3f3f3';
     --font: 16px;
     --header: 120px;
 }
@@ -35,14 +34,18 @@ export default {
     font-family: "Outfit", sans-serif;
 }
 
+.v-container {
+    max-width: 1500px !important;
+}
+
 html,
 body {
-    forced-color-adjust: none;
-    background: var(--bg);
+    background: #f3f3f3;
 }
 
 .view {
-    background: var(--bg);
+    background: #f3f3f3;
+
     width: 100%;
     margin-top: var(--header);
     min-height: 100vh;

@@ -8,11 +8,9 @@
                         <img :src="require('@/assets/img/mic.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        By entering in to the App, system will check emotional
+                        state of user, give detailed report and help to improve
+                        emotional condition of user
                     </div>
                 </div>
             </v-col>
@@ -22,11 +20,9 @@
                         <img :src="require('@/assets/img/lock.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        All data stored on cloud server and secured by
+                        protection. Data is used only in model tranings and
+                        image filtering
                     </div>
                 </div>
             </v-col>
@@ -36,11 +32,9 @@
                         <img :src="require('@/assets/img/brain.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        We use number of AI models in our web and mobile
+                        applications, so users can select any favorable. With
+                        updates there will number of types of facial expressions
                     </div>
                 </div>
             </v-col>
@@ -50,7 +44,7 @@
             <v-col cols="12" md="7" class="test">
                 <div>
                     <button class="load" @click="loadFrame" v-if="!active">
-                        Load
+                        Click to Load
                     </button>
                     <iframe :src="url" scrolling="no"></iframe>
                 </div>

@@ -8,11 +8,9 @@
                         <img :src="require('@/assets/img/mic.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        Health Manager feature designed specifically for
+                        individuals with disabilities. Seamlessly improve task
+                        management and timing, including medication schedules.
                     </div>
                 </div>
             </v-col>
@@ -22,11 +20,9 @@
                         <img :src="require('@/assets/img/lock.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        Experience enhanced organization and efficiency with our
+                        user-friendly Task Manager, tailored to simplify your
+                        daily routine and improve overall productivity.
                     </div>
                 </div>
             </v-col>
@@ -36,11 +32,8 @@
                         <img :src="require('@/assets/img/brain.svg')" alt="" />
                     </div>
                     <div class="body">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to ma
+                        This feature written without implementation of any AI
+                        and focused only on Task Management
                     </div>
                 </div>
             </v-col>

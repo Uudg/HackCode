@@ -40,7 +40,7 @@ export default {
             via: {
                 main: "AI Chat",
                 title: "Virtual Assistant",
-                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+                body: "Our Chat with AI Assistant feature in our app, offering a selection of 62 AI models to choose from. Engage in dynamic conversations with the AI assistant of your choice, effortlessly accessing a vast pool of information. From answering queries to providing intelligent insights, our AI assistants enhance your app experience by delivering seamless and comprehensive assistance. Explore the power of AI and unlock a world of knowledge at your fingertips.",
                 features: [
                     {
                         name: "Voice to text",
@@ -59,9 +59,8 @@ export default {
                 link: "/chat",
             },
             fr: {
-                main: "Image Processing",
                 title: "Face Recognition",
-                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+                body: "By entering in to the App, system will check emotional state of user, give detailed report and help to improve emotional condition of user. Report will be sent to the ChatGPT, or another selected model, to give best support and feedback.",
                 features: [
                     {
                         name: "Facial expressions",
@@ -76,8 +75,9 @@ export default {
                 link: "/face",
             },
             sn: {
+                main: "Image Processing",
                 title: "Sign Language Recognition",
-                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+                body: "Sign Language feature in our app, designed to empower individuals with disabilities. Users can demonstrate signs, which are seamlessly converted into words and sentences. This transformed text can then be conveniently input into ChatGPT, enhancing communication and simplifying the lives of users with disabilities. Experience a new level of inclusivity and ease with our Sign Language integration.",
                 features: [
                     {
                         name: "Training model",
@@ -94,7 +94,7 @@ export default {
             },
             voa: {
                 title: "Voice Assistant",
-                body: "",
+                body: "Introducing our multifunctional Voice Assistant, a powerful combination of Speech-to-Text and Text-to-Speech capabilities. With this feature, accessing information becomes effortless. Simply speak your queries to the AI Assistant, and it provides comprehensive internet search results through voice responses while displaying corresponding text messages on the screen. Experience seamless voice-guided interactions with access to a wealth of information, making your app experience both convenient and informative.",
                 features: [
                     {
                         name: "",
@@ -107,7 +107,7 @@ export default {
             hm: {
                 title: "Scheduling",
                 main: "Health Management",
-                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
+                body: "Health Manager feature designed specifically for individuals with disabilities. Seamlessly improve task management and timing, including medication schedules. Stay on track with timely reminders and notifications, ensuring you never miss important tasks. Experience enhanced organization and efficiency with our user-friendly Health Manager, tailored to simplify your daily routine and improve overall productivity.",
                 features: [
                     {
                         name: "Some Text",
@@ -192,7 +192,7 @@ span {
 }
 
 .first .body > div > div {
-    font-size: calc(car(--font)) * 1.5;
+    font-size: calc(var(--font) * 1.5);
     display: flex;
     align-items: center;
     opacity: 0.6;
@@ -211,7 +211,9 @@ h3 {
     line-height: 45px;
     margin: 40px 0;
 }
+</style>
 
+<style scoped>
 @media screen and (max-width: 960px) {
     h1,
     h2 {
@@ -229,8 +231,26 @@ h3 {
         height: 0;
     }
 
+    h1 {
+        margin-top: 5%;
+    }
+
     h3 {
         padding: 0 !important;
+        margin: 0;
+    }
+
+    .first .body {
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .first .body > div {
+        margin-top: 30%;
+    }
+
+    .first .body > div > div {
+        margin: 40px 0;
     }
 }
 </style>
